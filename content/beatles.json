@@ -1,0 +1,221 @@
+{
+  "id": "beatles",
+  "title": "The Beatles",
+  "sections": [
+    {
+      "id": "origins",
+      "title": "Origins",
+      "segments": [
+        {
+          "id": "s1",
+          "depth": 0,
+          "content": [
+            { "type": "text", "text": "The Beatles were an English rock band formed in " },
+            {
+              "type": "term",
+              "text": "Liverpool",
+              "elaboration": "A port city in northwest England, Liverpool had a thriving music scene in the late 1950s centred around venues like the Cavern Club, where the Beatles played nearly 300 times."
+            },
+            { "type": "text", "text": " in 1960. They became the most commercially successful and critically acclaimed band in the history of popular music." }
+          ]
+        },
+        {
+          "id": "s2",
+          "depth": 1,
+          "content": [
+            { "type": "text", "text": "The group evolved from earlier skiffle and rock and roll outfits led by " },
+            {
+              "type": "term",
+              "text": "John Lennon",
+              "elaboration": "John Lennon (1940–1980) was the founding member, rhythm guitarist, and principal creative force behind the Beatles' early direction. He was shot and killed outside his New York apartment on 8 December 1980."
+            },
+            { "type": "text", "text": ", most notably The Quarrymen, formed in 1956. Paul McCartney joined that year and George Harrison followed in 1958, before Ringo Starr replaced Pete Best as drummer in 1962." }
+          ]
+        },
+        {
+          "id": "s3",
+          "depth": 2,
+          "content": [
+            { "type": "text", "text": "The band honed their live performance across nearly 1,200 shows in " },
+            {
+              "type": "term",
+              "text": "Hamburg, West Germany",
+              "elaboration": "Between 1960 and 1962 the Beatles completed five residencies in Hamburg, playing clubs like the Indra and the Star-Club for up to eight hours a night. The gruelling schedule forged their tight ensemble sound."
+            },
+            { "type": "text", "text": " between 1960 and 1962, developing a raw, energetic stage presence before returning to Liverpool and signing with producer George Martin at EMI's Parlophone label." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "members",
+      "title": "Members",
+      "segments": [
+        {
+          "id": "s4",
+          "depth": 0,
+          "content": [
+            { "type": "text", "text": "The classic lineup consisted of John Lennon, Paul McCartney, George Harrison, and Ringo Starr. Lennon and McCartney formed one of the most celebrated songwriting partnerships in popular music; Harrison contributed guitar work and later his own compositions; Starr provided the rhythmic foundation on drums." }
+          ]
+        },
+        {
+          "id": "s5",
+          "depth": 1,
+          "content": [
+            { "type": "text", "text": "McCartney played bass and shared lead vocal duties with Lennon, while Harrison's guitar style drew on American rockabilly and later Indian classical influences. Starr replaced the more technically proficient Pete Best shortly before the band's breakthrough, a decision that proved pivotal: his distinctive, understated drumming became inseparable from the Beatles' sound." }
+          ]
+        },
+        {
+          "id": "s6",
+          "depth": 2,
+          "content": [
+            { "type": "text", "text": "Harrison's growing interest in Indian music — sparked by meeting " },
+            {
+              "type": "term",
+              "text": "Ravi Shankar",
+              "elaboration": "Ravi Shankar (1920–2012) was the pre-eminent sitar virtuoso of the 20th century. He tutored Harrison in 1966 and the two maintained a close friendship until Shankar's death."
+            },
+            { "type": "text", "text": " in 1966 — introduced the sitar to Western pop on tracks such as 'Norwegian Wood' and later shaped the texture of entire albums." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "career",
+      "title": "Musical Career",
+      "segments": [
+        {
+          "id": "s7",
+          "depth": 0,
+          "content": [
+            { "type": "text", "text": "The Beatles released their debut album " },
+            {
+              "type": "term",
+              "text": "Please Please Me",
+              "elaboration": "Released 22 March 1963 on Parlophone, Please Please Me was recorded in a single marathon session lasting just under ten hours. It reached number one on the UK Albums Chart."
+            },
+            { "type": "text", "text": " in 1963 and spent the decade redefining what popular music could be. Their studio output culminated in landmark records that transformed both the sonic and cultural possibilities of the album format." }
+          ]
+        },
+        {
+          "id": "s8",
+          "depth": 1,
+          "content": [
+            { "type": "text", "text": "Key albums across their career trace an arc from danceable Merseybeat to psychedelic experimentation and back to stripped-back rock:" }
+          ]
+        },
+        {
+          "id": "s9",
+          "depth": 1,
+          "content": [
+            { "type": "text", "text": "A Hard Day's Night (1964) — their first album composed entirely of original material, coinciding with their film debut and US breakthrough. Rubber Soul (1965) — a pivot toward folk rock and introspective lyricism that influenced Bob Dylan and Brian Wilson. " },
+            {
+              "type": "term",
+              "text": "Revolver",
+              "elaboration": "Released August 1966, Revolver is frequently ranked the greatest album ever made. It introduced studio techniques — tape loops, backward guitars, orchestral collages — that redefined what a recording studio could do."
+            },
+            { "type": "text", "text": " (1966) — a studio breakthrough blending Indian classical, avant-garde, and pop. Let It Be (1970) — a deliberately raw return to live performance, released after the band had already dissolved." }
+          ]
+        },
+        {
+          "id": "s10",
+          "depth": 0,
+          "content": [
+            { "type": "text", "text": "Their 1967 album " },
+            {
+              "type": "term",
+              "text": "Sgt. Pepper's Lonely Hearts Club Band",
+              "elaboration": "Released 1 June 1967, Sgt. Pepper's spent 27 weeks at number one in the UK and is widely regarded as the first 'concept album'. It won four Grammy Awards in 1968, including Album of the Year."
+            },
+            { "type": "text", "text": " is widely considered the most influential record in popular music history, consolidating the album as an artistic statement rather than a collection of singles." }
+          ]
+        },
+        {
+          "id": "s11",
+          "depth": 2,
+          "content": [
+            { "type": "text", "text": "The recording of Sgt. Pepper's required 700 hours of studio time — more than ten times the duration of their debut — and cost £25,000, an extraordinary sum in 1967. Producer " },
+            {
+              "type": "term",
+              "text": "George Martin",
+              "elaboration": "George Martin (1926–2016) was the Beatles' producer at EMI's Abbey Road Studios throughout their career. Often called 'the Fifth Beatle', he orchestrated and arranged the instrumental elements that translated their ideas into recorded sound."
+            },
+            { "type": "text", "text": " orchestrated the album's elaborate arrangements, including the famous 41-piece orchestra crescendo that closes 'A Day in the Life'." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cultural-impact",
+      "title": "Cultural Impact",
+      "segments": [
+        {
+          "id": "s12",
+          "depth": 0,
+          "content": [
+            { "type": "text", "text": "The Beatles triggered a cultural phenomenon known as " },
+            {
+              "type": "term",
+              "text": "Beatlemania",
+              "elaboration": "Beatlemania refers to the intense fan frenzy that surrounded the Beatles from 1963 onward. Concerts were frequently inaudible over sustained screaming; airports required police cordons; the band ultimately stopped touring in 1966 because live performance had become logistically and artistically untenable."
+            },
+            { "type": "text", "text": " that swept Britain in 1963 and the United States in 1964. Their appearance on The Ed Sullivan Show on 9 February 1964 attracted an estimated 73 million viewers and effectively launched the British Invasion of American popular music." }
+          ]
+        },
+        {
+          "id": "s13",
+          "depth": 1,
+          "content": [
+            { "type": "text", "text": "Beyond music, the Beatles shaped fashion, language, and countercultural politics throughout the 1960s. Their embrace of Transcendental Meditation, psychedelic imagery, and anti-war sentiment aligned them with the broader counterculture and gave their cultural authority a reach well beyond the pop charts." }
+          ]
+        },
+        {
+          "id": "s14",
+          "depth": 2,
+          "content": [
+            { "type": "text", "text": "The band's 1968 visit to study under " },
+            {
+              "type": "term",
+              "text": "Maharishi Mahesh Yogi",
+              "elaboration": "Maharishi Mahesh Yogi (1918–2008) was an Indian guru who developed the Transcendental Meditation technique. The Beatles' stay at his ashram in Rishikesh, India, proved one of their most prolific creative periods: approximately 48 songs were written there, many of which appeared on the White Album."
+            },
+            { "type": "text", "text": " in Rishikesh, India produced one of the most prolific songwriting bursts of their career, yielding material that would fill the double White Album released later that year." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disbandment-legacy",
+      "title": "Disbandment and Legacy",
+      "segments": [
+        {
+          "id": "s15",
+          "depth": 0,
+          "content": [
+            { "type": "text", "text": "The Beatles disbanded in 1970 following mounting personal and business tensions. Despite a career spanning only a decade, they released 13 studio albums and 20 number-one singles in the UK. They remain the best-selling music act in history, with estimated sales exceeding 600 million units worldwide." }
+          ]
+        },
+        {
+          "id": "s16",
+          "depth": 1,
+          "content": [
+            { "type": "text", "text": "The immediate cause of the split was a dispute over management following the death of their manager Brian Epstein in 1967, compounded by creative divergence and John Lennon's public declaration in September 1969 that he was leaving the band. Paul McCartney's announcement in April 1970 made the dissolution official." }
+          ]
+        },
+        {
+          "id": "s17",
+          "depth": 2,
+          "content": [
+            { "type": "text", "text": "Legal battles over the Apple Corps partnership continued until 1989. In 2023, the final Beatles song — 'Now and Then', a Lennon demo restored using " },
+            {
+              "type": "term",
+              "text": "AI audio separation technology",
+              "elaboration": "Peter Jackson's production team used machine-learning-based audio source separation (developed during the Get Back documentary) to isolate Lennon's voice from a low-fidelity cassette demo, enabling McCartney, Harrison (via archival guitar tracks), and Starr to complete the recording."
+            },
+            { "type": "text", "text": " — was released, reaching number one in the UK and becoming the band's first chart-topper in over 54 years." }
+          ]
+        }
+      ]
+    }
+  ]
+}
