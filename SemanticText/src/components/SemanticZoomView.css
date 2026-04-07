@@ -1,0 +1,142 @@
+.sz-view {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+  color: #1a1a1a;
+}
+
+.sz-doc-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+
+/* ── Hint ──────────────────────────────────────────────── */
+
+.sz-hint {
+  font-size: 0.78rem;
+  font-family: system-ui, sans-serif;
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* ── Sections ──────────────────────────────────────────── */
+
+.sz-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sz-section {
+  border-left: 3px solid #e0e0e0;
+  padding-left: 1rem;
+  transition: border-color 0.2s;
+}
+
+.sz-section--collapsed {
+  border-left-color: #1a73e8;
+}
+
+/* ── Section title (clickable) ─────────────────────────── */
+
+.sz-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem 0;
+  user-select: none;
+  border-radius: 3px;
+  transition: color 0.12s;
+}
+
+.sz-section-title:hover {
+  color: #1a73e8;
+}
+
+.sz-section-title:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 3px;
+}
+
+.sz-section-chevron {
+  font-size: 0.65rem;
+  color: #aaa;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+/* ── Layer fade-in ─────────────────────────────────────── */
+
+@keyframes sz-fade-in {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sz-fade-in {
+  animation: sz-fade-in 0.2s ease both;
+}
+
+/* ── Paragraph segments ────────────────────────────────── */
+
+.sz-segment {
+  margin-bottom: 0.7rem;
+  border-radius: 3px;
+  transition: background 0.12s;
+}
+
+.sz-segment:last-child {
+  margin-bottom: 0;
+}
+
+/* Expandable lines: show they are interactive */
+.sz-segment--expandable {
+  cursor: pointer;
+  padding: 0.15rem 0.3rem 0.15rem 0;
+  border-bottom: 1px dotted #bbb;
+}
+
+.sz-segment--expandable:hover {
+  background: #f5f8ff;
+  border-bottom-color: #1a73e8;
+}
+
+.sz-segment--expandable:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* When expanded, the paragraph shows the full text */
+.sz-segment--expanded {
+  border-bottom-style: solid;
+  border-bottom-color: #1a73e8;
+  background: #f5f8ff;
+}
+
+.sz-segment--expanded:hover {
+  background: #eaf1ff;
+}
+
+/* Expand/collapse indicator appended inline */
+.sz-expand-indicator {
+  font-size: 0.6rem;
+  color: #aaa;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+/* ── Term text (italic, non-interactive) ───────────────── */
+
+.sz-term-text {
+  font-style: italic;
+}
