@@ -30,20 +30,6 @@
   margin-bottom: 0.85rem;
 }
 
-/* Subtle typographic depth cues — no gating, just visual rhythm */
-.scroll-segment.depth-0 {
-  font-size: 1rem;
-}
-
-.scroll-segment.depth-1 {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.scroll-segment.depth-2 {
-  font-size: 0.9rem;
-  color: #555;
-}
 
 /* Terms are plain text in scroll mode — no interaction */
 .scroll-term {

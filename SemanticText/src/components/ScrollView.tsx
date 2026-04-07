@@ -22,7 +22,7 @@ export default function ScrollView({ doc }: Props) {
         <section key={section.id} className="scroll-section">
           <h2 className="scroll-section-title">{section.title}</h2>
           {section.segments.map((seg) => (
-            <p key={seg.id} className={`scroll-segment depth-${seg.depth}`}>
+            <p key={seg.id} className="scroll-segment">
               {renderTokens(seg.content)}
             </p>
           ))}
