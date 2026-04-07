@@ -1,0 +1,51 @@
+.scroll-view {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+  color: #1a1a1a;
+}
+
+.scroll-doc-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+
+.scroll-section {
+  margin-bottom: 2.5rem;
+}
+
+.scroll-section-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.scroll-segment {
+  margin-bottom: 0.85rem;
+}
+
+/* Subtle typographic depth cues — no gating, just visual rhythm */
+.scroll-segment.depth-0 {
+  font-size: 1rem;
+}
+
+.scroll-segment.depth-1 {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.scroll-segment.depth-2 {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Terms are plain text in scroll mode — no interaction */
+.scroll-term {
+  font-style: italic;
+}
