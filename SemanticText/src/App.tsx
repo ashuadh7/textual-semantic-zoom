@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ViewTabs, { type ViewMode } from "./components/ViewTabs";
 import ScrollView from "./components/ScrollView";
+import AccordionView from "./components/AccordionView";
 import type { Document } from "./data/types";
 import beatlesData from "./data/beatles.json";
 import "./App.css";
@@ -26,7 +27,7 @@ export default function App() {
       <ViewTabs active={mode} onChange={setMode} />
       <main className="app-content">
         {mode === "scrolling" && <ScrollView doc={doc} />}
-        {mode === "accordion" && <Placeholder label="Accordion" />}
+        {mode === "accordion" && <AccordionView doc={doc} />}
         {mode === "semantic" && <Placeholder label="Semantic Zoom" />}
       </main>
     </div>
