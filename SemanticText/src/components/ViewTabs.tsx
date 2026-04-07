@@ -8,9 +8,9 @@ interface Props {
 }
 
 const TABS: { id: ViewMode; label: string }[] = [
-  { id: "semantic", label: "Semantic" },
-  { id: "accordion", label: "Accordion" },
   { id: "scrolling", label: "Scrolling" },
+  { id: "accordion", label: "Accordion" },
+  { id: "semantic", label: "Semantic" },
 ];
 
 export default function ViewTabs({ active, onChange }: Props) {
