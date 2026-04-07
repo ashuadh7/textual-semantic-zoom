@@ -26,6 +26,11 @@
   overflow-y: auto;
 }
 
+/* In quiz/split mode the inner SplitView manages its own scrolling */
+.app-shell--split .app-content {
+  overflow: hidden;
+}
+
 .placeholder {
   display: flex;
   align-items: center;
