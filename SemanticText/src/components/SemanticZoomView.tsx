@@ -83,6 +83,10 @@ export default function SemanticZoomView({ doc }: Props) {
   const [expandedParagraphs, setExpandedParagraphs] = useState<Set<string>>(new Set());
 
   const containerRef = useRef<HTMLElement>(null);
+  // Track which section the mouse is currently over (null = outside all sections).
+  const hoveredSectionRef = useRef<string | null>(null);
+  // DOM refs for each section element, used for bounding-box hit testing.
+  const sectionElsRef = useRef<Map<string, HTMLElement>>(new Map());
 
   // Section title click: toggle between 0 (heading only) and maxDepth (full).
   function toggleSection(sectionId: string) {
@@ -109,8 +113,43 @@ export default function SemanticZoomView({ doc }: Props) {
     });
   }
 
-  // Shift+Scroll: nudge every section's depth by ±1, each clamped independently.
-  // Sections at different depths drift apart or converge naturally.
+  // Track hovered section via bounding-box hit testing on mousemove.
+  // This is more reliable than onMouseEnter/Leave because sections are full-width
+  // block elements — the bounding box approach lets us react to the exact pixel
+  // position, and "outside all boxes" correctly maps to the global mode.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    function handleMouseMove(e: MouseEvent) {
+      let found: string | null = null;
+      for (const [id, sectionEl] of sectionElsRef.current) {
+        const rect = sectionEl.getBoundingClientRect();
+        if (
+          e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top  && e.clientY <= rect.bottom
+        ) {
+          found = id;
+          break;
+        }
+      }
+      hoveredSectionRef.current = found;
+    }
+
+    function handleMouseLeave() {
+      hoveredSectionRef.current = null;
+    }
+
+    el.addEventListener("mousemove", handleMouseMove);
+    el.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  // Shift+Scroll: if hovering a section → zoom that section only;
+  // if outside all sections → zoom all sections globally.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -118,9 +157,11 @@ export default function SemanticZoomView({ doc }: Props) {
     function handleWheel(e: WheelEvent) {
       if (!e.shiftKey) return;
       e.preventDefault();
+      const targeted = hoveredSectionRef.current;
       setSectionDepths((prev) => {
         const next = { ...prev };
-        for (const id of Object.keys(next)) {
+        const ids = targeted ? [targeted] : Object.keys(next);
+        for (const id of ids) {
           if (e.deltaY < 0) next[id] = Math.min(next[id] + 1, maxDepth);
           else if (e.deltaY > 0) next[id] = Math.max(next[id] - 1, 0);
         }
@@ -137,7 +178,7 @@ export default function SemanticZoomView({ doc }: Props) {
       <h1 className="sz-doc-title">{doc.title}</h1>
 
       <p className="sz-hint" aria-hidden="true">
-        Shift + scroll to zoom · click a line to expand · click a heading to collapse or open fully
+        Shift + scroll over a section to zoom it · shift + scroll outside sections to zoom all · click a line to expand · click a heading to collapse or open fully
       </p>
 
       <div className="sz-sections">
@@ -150,6 +191,10 @@ export default function SemanticZoomView({ doc }: Props) {
             <section
               key={section.id}
               className={`sz-section${isCollapsed ? " sz-section--collapsed" : ""}`}
+              ref={(el) => {
+                if (el) sectionElsRef.current.set(section.id, el);
+                else sectionElsRef.current.delete(section.id);
+              }}
             >
               <h2
                 className="sz-section-title"
