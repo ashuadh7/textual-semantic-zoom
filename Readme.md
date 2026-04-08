@@ -1,5 +1,7 @@
 # Textual Semantic Zoom
 
+**[Live Demo](https://ashuadh7.github.io/textual-semantic-zoom/)** — try all three reading conditions (Scroll, Accordion, Semantic Zoom) in the browser, no install needed.
+
 A browser-based prototype demonstrating **semantic zooming for text**: a reading interface where content is revealed progressively through layered disclosure rather than presented all at once.
 
 ## Concept
