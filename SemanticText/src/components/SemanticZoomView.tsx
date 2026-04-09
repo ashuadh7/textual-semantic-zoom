@@ -173,12 +173,100 @@ export default function SemanticZoomView({ doc }: Props) {
     return () => el.removeEventListener("wheel", handleWheel);
   }, [maxDepth]);
 
+  // Pinch-to-zoom (mobile): two fingers spread = zoom in, pinch = zoom out.
+  // Target section is determined by the midpoint of the two touches.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    // Distance between two touch points.
+    function touchDist(t: TouchList) {
+      const dx = t[0].clientX - t[1].clientX;
+      const dy = t[0].clientY - t[1].clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    // Midpoint of two touches — used for section hit-testing.
+    function touchMid(t: TouchList) {
+      return {
+        x: (t[0].clientX + t[1].clientX) / 2,
+        y: (t[0].clientY + t[1].clientY) / 2,
+      };
+    }
+
+    // Find the section that contains a point (or null = outside all).
+    function sectionAtPoint(x: number, y: number): string | null {
+      for (const [id, sectionEl] of sectionElsRef.current) {
+        const rect = sectionEl.getBoundingClientRect();
+        if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+          return id;
+        }
+      }
+      return null;
+    }
+
+    // State for the current pinch gesture (lives in closure).
+    let baseDist = 0;
+    let lastStepDist = 0;
+    let pinchTargetId: string | null = null;
+    const STEP_RATIO = 0.25; // 25% change from last step triggers a depth step.
+
+    function handleTouchStart(e: TouchEvent) {
+      if (e.touches.length !== 2) return;
+      baseDist = touchDist(e.touches);
+      lastStepDist = baseDist;
+      const mid = touchMid(e.touches);
+      pinchTargetId = sectionAtPoint(mid.x, mid.y);
+    }
+
+    function handleTouchMove(e: TouchEvent) {
+      if (e.touches.length !== 2) return;
+      e.preventDefault(); // Prevent page scroll during pinch.
+      const dist = touchDist(e.touches);
+      const ratio = (dist - lastStepDist) / lastStepDist;
+
+      if (Math.abs(ratio) < STEP_RATIO) return;
+
+      const direction = ratio > 0 ? 1 : -1; // spread = +1, pinch = -1
+      lastStepDist = dist;
+
+      setSectionDepths((prev) => {
+        const next = { ...prev };
+        const ids = pinchTargetId ? [pinchTargetId] : Object.keys(next);
+        for (const id of ids) {
+          next[id] = Math.min(Math.max(next[id] + direction, 0), maxDepth);
+        }
+        return next;
+      });
+    }
+
+    function handleTouchEnd(e: TouchEvent) {
+      if (e.touches.length < 2) {
+        baseDist = 0;
+        lastStepDist = 0;
+        pinchTargetId = null;
+      }
+    }
+
+    el.addEventListener("touchstart", handleTouchStart, { passive: true });
+    el.addEventListener("touchmove", handleTouchMove, { passive: false });
+    el.addEventListener("touchend", handleTouchEnd, { passive: true });
+    return () => {
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchmove", handleTouchMove);
+      el.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [maxDepth]);
+
   return (
     <article className="sz-view" ref={containerRef}>
       <h1 className="sz-doc-title">{doc.title}</h1>
 
-      <p className="sz-hint" aria-hidden="true">
+      <p className="sz-hint sz-hint--desktop" aria-hidden="true">
         Shift + scroll over a section to zoom it · shift + scroll outside sections to zoom all · click a line to expand · click a heading to collapse or open fully
+      </p>
+      <p className="sz-hint sz-hint--mobile" aria-hidden="true">
+        Pinch over a section to zoom it · tap a line to expand · tap a heading to collapse or open fully
       </p>
 
       <div className="sz-sections">

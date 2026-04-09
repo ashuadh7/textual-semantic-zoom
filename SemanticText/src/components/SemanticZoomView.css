@@ -25,6 +25,15 @@
   font-style: italic;
 }
 
+/* Show desktop hint on pointer devices, mobile hint on touch-only devices */
+.sz-hint--mobile  { display: none; }
+.sz-hint--desktop { display: block; }
+
+@media (hover: none) and (pointer: coarse) {
+  .sz-hint--desktop { display: none; }
+  .sz-hint--mobile  { display: block; }
+}
+
 /* ── Sections ──────────────────────────────────────────── */
 
 .sz-sections {
@@ -133,6 +142,26 @@
   color: #aaa;
   margin-left: 0.25rem;
   vertical-align: middle;
+}
+
+/* ── Mobile adjustments ────────────────────────────────── */
+
+@media (hover: none) and (pointer: coarse) {
+  .sz-view {
+    padding: 1rem 0.75rem 4rem;
+  }
+
+  /* Larger tap targets for expandable paragraphs */
+  .sz-segment--expandable {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+
+  /* Larger tap target for section headings */
+  .sz-section-title {
+    padding: 0.5rem 0;
+    min-height: 44px;
+  }
 }
 
 /* ── Term text (italic, non-interactive) ───────────────── */
