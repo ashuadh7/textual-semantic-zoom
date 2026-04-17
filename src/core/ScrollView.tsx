@@ -1,4 +1,4 @@
-import type { Document, Token } from "../data/types";
+import type { Document, Token } from "./types";
 import "./ScrollView.css";
 
 interface Props {
