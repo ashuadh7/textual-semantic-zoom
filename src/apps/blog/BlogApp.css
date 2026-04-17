@@ -1,0 +1,169 @@
+/* Blog shell */
+.blog-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  color: #1a1a1a;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.blog-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Tabs */
+.blog-tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.blog-tab {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.blog-tab:hover {
+  color: #1a1a1a;
+}
+
+.blog-tab.active {
+  color: #1a1a1a;
+  border-bottom-color: #1a1a1a;
+}
+
+/* Content area */
+.blog-content {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.blog-empty {
+  color: #999;
+  font-style: italic;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Accordion */
+.blog-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.blog-accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.blog-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  color: #1a1a1a;
+  gap: 1rem;
+}
+
+.blog-accordion-item.open .blog-accordion-header {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-accordion-chevron {
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  color: #888;
+}
+
+/* Accordion body — markdown prose */
+.blog-accordion-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.blog-accordion-body h1 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.25rem;
+}
+
+.blog-accordion-body h1:first-child {
+  margin-top: 0;
+}
+
+.blog-accordion-body h2 {
+  font-size: 1.1rem;
+  margin: 1.4rem 0 0.4rem;
+}
+
+.blog-accordion-body h3 {
+  font-size: 1rem;
+  margin: 1.1rem 0 0.3rem;
+}
+
+.blog-accordion-body p {
+  margin: 0.6rem 0;
+}
+
+.blog-accordion-body hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 1.5rem 0;
+}
+
+.blog-accordion-body blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid #ccc;
+  color: #555;
+  font-style: italic;
+}
+
+.blog-accordion-body blockquote p {
+  margin: 0;
+}
+
+.blog-accordion-body ul {
+  margin: 0.6rem 0;
+  padding-left: 1.4rem;
+}
+
+.blog-accordion-body li {
+  margin: 0.3rem 0;
+}
+
+.blog-accordion-body strong {
+  font-weight: 700;
+  color: #111;
+}

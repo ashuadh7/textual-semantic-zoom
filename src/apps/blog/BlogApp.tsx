@@ -1,5 +1,89 @@
-export default function BlogApp() {
+import { useState } from "react";
+import Markdown from "react-markdown";
+import type { BlogTab, PodcastEntry, BookEntry, ArticleEntry } from "./types";
+import blogData from "./data/blog.json";
+import "./BlogApp.css";
+
+function AccordionItem({ header, content }: { header: string; content: string }) {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="placeholder">Blog reader — coming soon</div>
+    <div className={`blog-accordion-item${open ? " open" : ""}`}>
+      <button className="blog-accordion-header" onClick={() => setOpen(!open)}>
+        <span>{header}</span>
+        <span className="blog-accordion-chevron">{open ? "▲" : "▼"}</span>
+      </button>
+      {open && (
+        <div className="blog-accordion-body">
+          <Markdown>{content}</Markdown>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PodcastsTab({ entries }: { entries: PodcastEntry[] }) {
+  if (entries.length === 0) return <p className="blog-empty">No podcast notes yet.</p>;
+  return (
+    <div className="blog-accordion-list">
+      {entries.map((e) => (
+        <AccordionItem key={e.id} header={`${e.date} — ${e.title}`} content={e.content} />
+      ))}
+    </div>
+  );
+}
+
+function BooksTab({ entries }: { entries: BookEntry[] }) {
+  if (entries.length === 0) return <p className="blog-empty">No book notes yet.</p>;
+  return (
+    <div className="blog-accordion-list">
+      {entries.map((e) => (
+        <AccordionItem key={e.id} header={e.title} content={e.content} />
+      ))}
+    </div>
+  );
+}
+
+function ArticlesTab({ entries }: { entries: ArticleEntry[] }) {
+  if (entries.length === 0) return <p className="blog-empty">No article notes yet.</p>;
+  return (
+    <div className="blog-accordion-list">
+      {entries.map((e) => (
+        <AccordionItem key={e.id} header={e.title} content={e.content} />
+      ))}
+    </div>
+  );
+}
+
+const TABS: { id: BlogTab; label: string }[] = [
+  { id: "podcasts", label: "Podcasts" },
+  { id: "books", label: "Books" },
+  { id: "articles", label: "Articles" },
+];
+
+export default function BlogApp() {
+  const [tab, setTab] = useState<BlogTab>("podcasts");
+
+  return (
+    <div className="blog-shell">
+      <header className="blog-header">
+        <span className="blog-brand">Notes</span>
+      </header>
+      <nav className="blog-tabs">
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            className={`blog-tab${tab === t.id ? " active" : ""}`}
+            onClick={() => setTab(t.id)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </nav>
+      <main className="blog-content">
+        {tab === "podcasts" && <PodcastsTab entries={blogData.podcasts as PodcastEntry[]} />}
+        {tab === "books" && <BooksTab entries={blogData.books as BookEntry[]} />}
+        {tab === "articles" && <ArticlesTab entries={blogData.articles as ArticleEntry[]} />}
+      </main>
+    </div>
   );
 }
