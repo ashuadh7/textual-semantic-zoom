@@ -1,57 +1,86 @@
 # Textual Semantic Zoom
 
-**[Live Demo](https://ashuadh7.github.io/textual-semantic-zoom/)** — try all three reading conditions (Scroll, Accordion, Semantic Zoom) in the browser, no install needed.
+**[Live Demo](https://ashuadh7.github.io/textual-semantic-zoom/)** — try the reading interface in the browser, no install needed.
 
-A browser-based prototype demonstrating **semantic zooming for text**: a reading interface where content is revealed progressively through layered disclosure rather than presented all at once.
+A browser-based **semantic zooming interface for text**: content is revealed progressively through layered disclosure rather than presented all at once. Built as both a personal note-reading tool and a research prototype.
 
 ## Concept
 
 The system models a document as a stack of depth tiers. The base layer contains the essential skeleton of the text. Each successive layer slots additional detail into the existing prose at natural positions, preserving the original phrase order and document structure throughout.
 
 Revelation happens two ways:
-- **Global expansion** — `Shift+Scroll` advances the document one layer at a time, revealing the next tier of detail across the whole text.
+- **Global expansion** — `Shift+Scroll` (desktop) or pinch gesture (mobile/trackpad) advances the document one layer at a time, revealing the next tier of detail across the whole text.
 - **Selective expansion** — clicking a highlighted term or phrase opens an inline elaboration for that specific concept only.
 
-A subtle visual indicator (e.g., a highlight fade or marginal mark) distinguishes newly revealed content from content that was already visible.
+## Project Contexts
 
-## Demo Target
+This repo serves two overlapping purposes built on a **shared semantic zoom engine**:
 
-The immediate goal is a working demo built around **an article about The Beatles**. The article will be authored manually in a layered JSON format, with layer 0 as the essential narrative and layers 1–N progressively adding context, detail, and supporting facts.
+| Context | URL | What it is |
+|---|---|---|
+| **Blog reader** | `/` | Personal notes on books, podcasts, articles — infinite scroll by content type, semantic zoom only |
+| **Research demo** | `/research` | Three-view comparison (Scroll / Accordion / Semantic Zoom) for a controlled user study |
 
-Three interface conditions will be implemented for comparison:
+Any improvement to the core engine (new gestures, rendering fixes, new interaction patterns) automatically applies to both contexts.
 
-| Condition | Description |
-|-----------|-------------|
-| **Scroll** | All content visible simultaneously (standard reading) |
-| **Accordion** | Content segmented by section, expandable on demand |
-| **Semantic Zoom** | Progressive layer-by-layer disclosure via Shift+Scroll + inline click |
+## Architecture
 
-## Conceptual Frame: Negotiated Priority
+```
+src/
+├── core/                        ← shared semantic zoom engine
+│   ├── SemanticZoomView.tsx     (the main zoom interface)
+│   ├── ScrollView.tsx           (linear baseline)
+│   ├── AccordionView.tsx        (section-gated baseline)
+│   └── types.ts                 (Document, SemanticDocument schemas)
+├── apps/
+│   ├── research/                ← research demo shell
+│   │   ├── ResearchApp.tsx      (3-view tabs, sample content)
+│   │   └── data/                (beatles.json, beatles-semantic.json)
+│   └── blog/                    ← personal blog reader shell
+│       ├── BlogApp.tsx          (Podcasts | Books | Articles tabs)
+│       └── data/                (one JSON per entry)
+└── App.tsx                      ← React Router: / → Blog, /research → Research
+```
 
-The system implements a **negotiated priority model**: authors encode significance through which content appears at which layer (structural salience), while readers exercise agency through selective inline expansion (contextual relevance). This is distinct from the author-controlled hierarchy of an accordion and the undifferentiated access of a scroll.
+## Data Model
 
-## Technical Stack
+**Linear content** (`Document`) → used by Scroll + Accordion views
+```
+Document → Section[] → Segment[] → Token[]
+Segment.depth: 0=always visible, N=revealed at layer N
+Token: { type:"text", text } | { type:"term", text, elaboration }
+```
 
-- Vite + React + TypeScript
-- No LLM backend required for the demo (content is manually authored)
+**Semantic content** (`SemanticDocument`) → used by SemanticZoom view
+```
+SemanticDocument → SZSection[] → SZLayer[] → SZParagraph[]
+SZLayer.depth: 1=compressed summary, 2=short paragraphs, 3=full text
+SZParagraph.expandsToId?: references depth-3 paragraph for inline expansion
+```
+
+## Dev Commands
+
+Run inside `SemanticText/`:
+```
+npm run dev      # start Vite dev server
+npm run build    # tsc + vite build
+npm run lint     # eslint
+```
 
 ## Future Work
 
-- **GenAI authoring pipeline** — transform an arbitrary document into a layered semantic zoom representation automatically; evaluate for authoring efficiency and structural fidelity.
-- **Graph view** — explore an alternative rendering mode where concepts and their relationships are visualised as an interactive graph rather than linear prose.
-- **Controlled user study** — within-subjects comparison of Scroll × Accordion × Semantic Zoom across three text genres (fictional encyclopedia, expository science, cultural review), measuring recall, comprehension, relevance identification, and NASA-TLX cognitive load.
+- **GenAI authoring pipeline** — transform an arbitrary document into a layered semantic zoom representation automatically.
+- **Concept linking** — highlight a concept (e.g. "cognitive overload") and surface all related passages across the document for high-level scanning.
+- **Graph view** — explore relationships between concepts as an interactive graph rather than linear prose.
+- **Controlled user study** — within-subjects comparison of Scroll × Accordion × Semantic Zoom across text genres, measuring recall, comprehension, and cognitive load (NASA-TLX).
 
-## Development Phases & Issues
+## Issues / Roadmap
 
-### Phase 1: Foundation
-- **Issue 1:** Project setup — Vite + React + TypeScript, linting, folder structure
-- **Issue 2:** Author the Beatles article in layered JSON format (layer 0 = skeleton, layers 1–N = progressive detail)
+See [GitHub Issues](https://github.com/ashuadh7/textual-semantic-zoom/issues) for current work items.
 
-### Phase 2: Core Interfaces
-- **Issue 3:** Scroll baseline — render the full layered document as a flat, fully-visible page
-- **Issue 4:** Accordion baseline — segment the document by section with expand/collapse controls
-- **Issue 5:** Semantic Zoom interface — layer-aware renderer with Shift+Scroll global expansion and click-to-expand inline terms
-
-### Phase 3: Polish & Instrumentation
-- **Issue 6:** Visual indicators — highlight fade or marginal marks on newly revealed content
-- **Issue 7:** Interaction logging — record expansion events, dwell time, and depth reached per session
+### Architecture pivot (v2)
+- **Issue #17** — Remove quiz panel and split-screen layout (`git tag: quiz-removed`)
+- **Issue #18** — Reorganize into `core/` engine and `apps/` contexts
+- **Issue #19** — Add React Router: `/research` and `/` routes
+- **Issue #20** — Blog shell: content-type tabs + infinite scroll with SemanticZoom
+- **Issue #21** — Update CLAUDE.md to reflect new project structure
