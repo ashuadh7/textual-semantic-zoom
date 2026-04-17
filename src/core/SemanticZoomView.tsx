@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import type { SemanticDocument, SZSection, SZLayer, SZParagraph, Token } from "../data/types";
+import type { SemanticDocument, SZSection, SZLayer, SZParagraph, Token } from "./types";
 import "./SemanticZoomView.css";
 
 interface Props {

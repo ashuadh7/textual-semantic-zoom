@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Document, Token } from "../data/types";
+import type { Document, Token } from "./types";
 import "./AccordionView.css";
 
 interface Props {
