@@ -91,3 +91,47 @@ npm run lint     # eslint
 - Never include Co-Authored-By, "Generated with Claude", or any Claude attribution.
 - Always stop after committing — do not push or merge without user approval.
 - Every new issue or feature must be worked on a dedicated branch — never commit directly to main.
+
+## Issue Tracker
+
+**Whenever an issue is opened, closed, or updated during a conversation, update this section immediately.**
+
+### Milestones
+
+| Milestone | Goal | Due |
+|-----------|------|-----|
+| M1 — Monday Demo | Working blog reader with real entries, deployed to GitHub Pages | 2026-04-20 |
+| M2 — Blog Pipeline | Sustainable note-publishing workflow; one entry per content type | 2026-05-04 |
+| M3 — Research Ready | Infrastructure for a controlled user study (auth, logging, participant tracking) | — |
+
+### Open Issues
+
+| # | Title | Milestone |
+|---|-------|-----------|
+| #6 | Visual indicators for newly revealed content | M3 — Research Ready |
+| #7 | Interaction logging — expansion events, dwell time, depth reached | M3 — Research Ready |
+| #22 | Update CLAUDE.md to reflect new project structure | M1 — Monday Demo |
+| #24 | Verify GitHub Pages deployment is current | M1 — Monday Demo |
+| #25 | Define note authoring schema and template | M2 — Blog Pipeline |
+| #26 | GenAI authoring pipeline: raw notes → SemanticDocument JSON | M2 — Blog Pipeline |
+| #27 | Personal website integration | M2 — Blog Pipeline |
+| #28 | Auth / accounts for multi-user research deployment | M3 — Research Ready |
+| #29 | Participant tracking and study session management | M3 — Research Ready |
+
+### Closed Issues
+
+| # | Title |
+|---|-------|
+| #1 | Author the Beatles article in layered JSON format |
+| #2 | Scroll baseline — render full document as flat visible page |
+| #3 | Accordion baseline — section-gated expand/collapse interface |
+| #4 | Project setup — Vite + React + TypeScript |
+| #5 | Semantic Zoom interface — Shift+Scroll global expansion + inline click |
+| #13 | Context-aware scroll: hover-targeted vs global depth zoom |
+| #14 | Quiz mode: split-screen reader + 5-question MCQ that requires semantic zooming |
+| #16 | Mobile support: pinch-to-zoom for SemanticZoomView |
+| #18 | Remove quiz panel and split-screen layout |
+| #19 | Reorganize code into core/ engine and apps/ contexts |
+| #20 | Add React Router: /research and / routes |
+| #21 | Blog shell: content-type tabs and SemanticZoom per entry |
+| #23 | Author 2-3 real note entries as SemanticDocument JSON |
