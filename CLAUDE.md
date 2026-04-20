@@ -111,6 +111,7 @@ npm run lint     # eslint
 | #6 | Visual indicators for newly revealed content | M3 — Research Ready |
 | #7 | Interaction logging — expansion events, dwell time, depth reached | M3 — Research Ready |
 | #22 | Update CLAUDE.md to reflect new project structure | M1 — Monday Demo |
+| #32 | Touchpad pinch-to-zoom on Mac and Windows trackpads | M1 — Monday Demo |
 | #24 | Verify GitHub Pages deployment is current | M1 — Monday Demo |
 | #25 | Define note authoring schema and template | M2 — Blog Pipeline |
 | #26 | GenAI authoring pipeline: raw notes → SemanticDocument JSON | M2 — Blog Pipeline |

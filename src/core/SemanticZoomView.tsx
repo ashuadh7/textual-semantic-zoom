@@ -149,22 +149,45 @@ export default function SemanticZoomView({ doc, hideTitle = false }: Props) {
     };
   }, []);
 
-  // Shift+Scroll: if hovering a section → zoom that section only;
-  // if outside all sections → zoom all sections globally.
+  // Shift+Scroll or touchpad pinch (ctrlKey wheel): zoom sections.
+  // Hovering a section targets that section only; outside = all sections.
+  // Touchpad pinch sends many small deltaY frames, so we accumulate until
+  // a threshold is crossed before stepping depth.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
+    // Accumulator for touchpad pinch deltas (ctrlKey wheel events).
+    let pinchAccum = 0;
+    const PINCH_THRESHOLD = 30; // accumulated deltaY before a depth step fires
+
     function handleWheel(e: WheelEvent) {
-      if (!e.shiftKey) return;
+      if (!e.shiftKey && !e.ctrlKey) return;
       e.preventDefault();
       const targeted = hoveredSectionRef.current;
+
+      let direction: 1 | -1 | 0 = 0;
+
+      if (e.shiftKey) {
+        // Shift+scroll: each wheel tick = one step.
+        direction = e.deltaY < 0 ? 1 : e.deltaY > 0 ? -1 : 0;
+      } else {
+        // Touchpad pinch (ctrlKey): accumulate small deltas, step at threshold.
+        // Pinch-out (spread) → negative deltaY → zoom in (+1).
+        pinchAccum += e.deltaY;
+        if (Math.abs(pinchAccum) >= PINCH_THRESHOLD) {
+          direction = pinchAccum < 0 ? 1 : -1;
+          pinchAccum = 0;
+        }
+      }
+
+      if (direction === 0) return;
+
       setSectionDepths((prev) => {
         const next = { ...prev };
         const ids = targeted ? [targeted] : Object.keys(next);
         for (const id of ids) {
-          if (e.deltaY < 0) next[id] = Math.min(next[id] + 1, maxDepth);
-          else if (e.deltaY > 0) next[id] = Math.max(next[id] - 1, 0);
+          next[id] = Math.min(Math.max(next[id] + direction, 0), maxDepth);
         }
         return next;
       });
@@ -264,7 +287,7 @@ export default function SemanticZoomView({ doc, hideTitle = false }: Props) {
       {!hideTitle && <h1 className="sz-doc-title">{doc.title}</h1>}
 
       <p className="sz-hint sz-hint--desktop" aria-hidden="true">
-        Shift + scroll over a section to zoom it · shift + scroll outside sections to zoom all · click a line to expand · click a heading to collapse or open fully
+        Shift + scroll or pinch (trackpad) over a section to zoom it · outside sections to zoom all · click a line to expand · click a heading to collapse or open fully
       </p>
       <p className="sz-hint sz-hint--mobile" aria-hidden="true">
         Pinch over a section to zoom it · tap a line to expand · tap a heading to collapse or open fully
