@@ -1,0 +1,189 @@
+{
+  "id": "malcolm-gladwell-what-now-2026-04-17",
+  "title": "What Now? — Malcolm Gladwell",
+  "sections": [
+    {
+      "id": "mg-two",
+      "title": "Two Conversations Masquerading as One",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "mg-two-d1-p1",
+              "expandsToId": "mg-two-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "The trans athlete debate is two separate conversations — sports integrity vs. human rights" }
+              ]
+            },
+            {
+              "id": "mg-two-d1-p2",
+              "expandsToId": "mg-two-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Gladwell saw this live but stayed quiet; naming it later caused controversy" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "mg-two-d2-p1",
+              "expandsToId": "mg-two-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Both sides appear to debate one question, but operate from different premises: sports integrity (biological fairness) vs. human rights (inclusion and dignity). These aren't different opinions — they're different conversations." }
+              ]
+            },
+            {
+              "id": "mg-two-d2-p2",
+              "expandsToId": "mg-two-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Gladwell noticed this during moderation but held back. When he later named the observation publicly, it was misread and caused controversy." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "mg-two-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "On the surface, both sides discuss one question — should trans athletes compete in female sports? But they're actually operating from different premises. One side argues from " },
+                { "type": "term", "text": "sports integrity", "elaboration": "The sports integrity frame asks whether competition is biologically fair — whether physiological differences create an uneven playing field that undermines the point of sport." },
+                { "type": "text", "text": ": is it biologically fair? The other argues from " },
+                { "type": "term", "text": "human rights", "elaboration": "The human rights frame asks whether trans people deserve to participate in public life — including sport — with full dignity. Exclusion is experienced as a statement about their personhood, not just their athletic classification." },
+                { "type": "text", "text": ": trans people deserve inclusion and dignity. These aren't different opinions on the same question — they're fundamentally different conversations wearing the same surface topic." }
+              ]
+            },
+            {
+              "id": "mg-two-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Gladwell noticed this during the moderation and wanted to name it, but held back to keep things calm. Years later when he mentioned the observation publicly, it was misinterpreted, causing controversy. The meta-point: even talking about the framing difference gets misread when people are locked into their own frame." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mg-gsol",
+      "title": "Gladwell's Proposed Solution",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "mg-gsol-d1-p1",
+              "expandsToId": "mg-gsol-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Keep your position — but actively address the costs you create for the other side" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "mg-gsol-d2-p1",
+              "expandsToId": "mg-gsol-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Both sides keep their stance but acknowledge the other's concern is legitimate, and actively work to address the costs their position creates — not by compromising, but by acting elsewhere." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "mg-gsol-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "The proposal: both sides maintain their actual positions — nobody compromises on core stance. But each acknowledges the other's concern is real and works to address those costs through other means." }
+              ]
+            },
+            {
+              "id": "mg-gsol-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "For those supporting trans inclusion: argue for trans athletes to compete, but also actively support female sports — funding, advocacy, visibility — to address the fairness concern your position creates tension around." }
+              ]
+            },
+            {
+              "id": "mg-gsol-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "For those opposing trans inclusion in sport: hold your position on competitive fairness, but actively support trans inclusion everywhere else — donations, policy advocacy, public statements — to show your opposition is specifically about competitive integrity, not about being anti-trans." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mg-tsol",
+      "title": "Trevor Noah's Proposed Solution",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "mg-tsol-d1-p1",
+              "expandsToId": "mg-tsol-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "We lack imagination, not solutions — sports has solved harder fairness problems before" }
+              ]
+            },
+            {
+              "id": "mg-tsol-d1-p2",
+              "expandsToId": "mg-tsol-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Moral panics about inclusion always look impossible — until they're solved and normalized" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "mg-tsol-d2-p1",
+              "expandsToId": "mg-tsol-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Trevor argues the either-or framing is a failure of imagination. Sports has already invented weight classes, handicap systems, and Paralympics to accommodate wildly different bodies." }
+              ]
+            },
+            {
+              "id": "mg-tsol-d2-p2",
+              "expandsToId": "mg-tsol-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Moral panics about inclusion always look intractable — until they're solved and forgotten. The work is creative structure, not an impossible choice." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "mg-tsol-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Trevor's argument: this problem is not unsolvable — we just lack the imagination to see past the current moment. Sports already accommodates vast differences through creative structure: " },
+                { "type": "term", "text": "weight classes", "elaboration": "Boxing, wrestling, and weightlifting have used weight categories since the 19th century to ensure fair competition between athletes of comparable size. Nobody questions whether a featherweight and a heavyweight should both exist." },
+                { "type": "text", "text": " in boxing, handicap systems in golf, dozens of stroke categories in swimming, the continuously evolving " },
+                { "type": "term", "text": "Paralympics", "elaboration": "The Paralympics began as the Stoke Mandeville Games in 1948, started by neurosurgeon Ludwig Guttmann for WWII veterans with spinal injuries. It now classifies athletes across 10 impairment types with hundreds of sub-categories — a continuously refined system for making fair competition possible across radically different bodies." },
+                { "type": "text", "text": ". The real work is creative structure — not a binary choice." }
+              ]
+            },
+            {
+              "id": "mg-tsol-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "People always panic when something new is proposed. Women in public restrooms, Black people in public spaces — both caused moral panic, both normalized over time. If we stopped treating this as an impossible either-or and actually invested in finding solutions, we'd figure it out the way we've already done it countless times before." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

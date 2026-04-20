@@ -4,6 +4,7 @@ import "./SemanticZoomView.css";
 
 interface Props {
   doc: SemanticDocument;
+  hideTitle?: boolean;
 }
 
 function maxLayerDepth(doc: SemanticDocument): number {
@@ -71,7 +72,7 @@ function ParagraphRow({ para, section, expanded, onToggle }: ParagraphRowProps) 
   );
 }
 
-export default function SemanticZoomView({ doc }: Props) {
+export default function SemanticZoomView({ doc, hideTitle = false }: Props) {
   const maxDepth = maxLayerDepth(doc);
 
   // Each section tracks its own depth independently.
@@ -260,7 +261,7 @@ export default function SemanticZoomView({ doc }: Props) {
 
   return (
     <article className="sz-view" ref={containerRef}>
-      <h1 className="sz-doc-title">{doc.title}</h1>
+      {!hideTitle && <h1 className="sz-doc-title">{doc.title}</h1>}
 
       <p className="sz-hint sz-hint--desktop" aria-hidden="true">
         Shift + scroll over a section to zoom it · shift + scroll outside sections to zoom all · click a line to expand · click a heading to collapse or open fully

@@ -1,0 +1,259 @@
+{
+  "id": "simon-sinek-what-now-2026-04-17",
+  "title": "What Now? — Simon Sinek",
+  "sections": [
+    {
+      "id": "ss-tac",
+      "title": "Tactical vs. Strategic Thinking",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "ss-tac-d1-p1",
+              "expandsToId": "ss-tac-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Strategic leaders know their tactical gap; tactical leaders can't see it" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "ss-tac-d2-p1",
+              "expandsToId": "ss-tac-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Strategic leaders understand they're weak in tactical execution. Tactical leaders tend to overestimate their strategic strength — or miss the distinction between the two modes entirely." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "ss-tac-d3-p1",
+              "tokens": [
+                { "type": "term", "text": "Strategic leaders", "elaboration": "Leaders who focus on long-term direction, resource allocation, and positioning — as opposed to day-to-day execution." },
+                { "type": "text", "text": " understand they are weak in tactical execution and build teams to compensate. Leaders who are primarily " },
+                { "type": "term", "text": "tactical", "elaboration": "Tactical leaders focus on near-term execution and getting things done — the how rather than the why or where." },
+                { "type": "text", "text": ", however, tend to overestimate their strategic strength. Worse, they often don't recognise that strategic and tactical are distinct modes of thinking — which makes the blind spot invisible to them." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ss-why",
+      "title": "Everyone Has One Why",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "ss-why-d1-p1",
+              "expandsToId": "ss-why-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Your Why traces back to a childhood joy or a formative wound" }
+              ]
+            },
+            {
+              "id": "ss-why-d1-p2",
+              "expandsToId": "ss-why-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Trevor's Why: peak moment recreated a self-directed, agency-full childhood game" }
+              ]
+            },
+            {
+              "id": "ss-why-d1-p3",
+              "expandsToId": "ss-why-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "The closet story: protecting the vulnerable as a lifelong Why" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "ss-why-d2-p1",
+              "expandsToId": "ss-why-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Simon's framework: your Why recreates a joyful childhood memory, or traces back to a formative wound that shaped your sense of purpose." }
+              ]
+            },
+            {
+              "id": "ss-why-d2-p2",
+              "expandsToId": "ss-why-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Trevor's peak moment — the White House Correspondents' Dinner — mirrored spinning a top as a child: self-set goal, full agency over who's in the room, pure fun." }
+              ]
+            },
+            {
+              "id": "ss-why-d2-p3",
+              "expandsToId": "ss-why-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "A client who hid with her sister from her alcoholic father found her Why in protecting the vulnerable — the exact act she performed in that closet as a child." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "ss-why-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Simon's framework: your " },
+                { "type": "term", "text": "Why", "elaboration": "Simon Sinek's concept from Start With Why: every person has a deep-rooted reason — the Why — that drives their decisions. It's rooted in something emotionally formative, not money or status." },
+                { "type": "text", "text": " is rooted in either a happy childhood memory you are symbolically trying to recreate, or in a formative wound that shaped your sense of purpose. The Why doesn't change — you spend your life searching for the conditions that recreate that original state." }
+              ]
+            },
+            {
+              "id": "ss-why-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Trevor's memory: spinning a top with friends on a playground. His peak moment was the White House Correspondents' Dinner. The parallel Simon drew: self-set goal (no boss, no external benchmark), full agency over who's in the room (people he genuinely admires), pure fun (success and failure are bonuses — the condition itself is the high). Every element of the peak moment maps directly onto the childhood memory." }
+              ]
+            },
+            {
+              "id": "ss-why-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "A client whose father was an alcoholic: as a child, she protected her sister by covering her and hiding in a closet. Her Why — " },
+                { "type": "term", "text": "protecting the unprotected", "elaboration": "The idea that your deepest Why often emerges from a moment of vulnerability — protecting someone else or being protected — and becomes the lens through which you find meaning in all subsequent work." },
+                { "type": "text", "text": " — was forged in that act. Every time she shields someone vulnerable today, she traces back to that closet." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ss-svc",
+      "title": "Service as a Path to Accomplishment",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "ss-svc-d1-p1",
+              "expandsToId": "ss-svc-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Can't find your purpose? Start with service" }
+              ]
+            },
+            {
+              "id": "ss-svc-d1-p2",
+              "expandsToId": "ss-svc-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "Teaching a friend in a rut revealed her purpose — coaching her hadn't" }
+              ]
+            },
+            {
+              "id": "ss-svc-d1-p3",
+              "expandsToId": "ss-svc-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "Step 12 of AA: teaching is the deepest form of learning" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "ss-svc-d2-p1",
+              "expandsToId": "ss-svc-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Simon's advice for people stuck on purpose: start with service. Helping someone else creates the conditions for purpose to emerge." }
+              ]
+            },
+            {
+              "id": "ss-svc-d2-p2",
+              "expandsToId": "ss-svc-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "He restructured coaching sessions with a stuck friend — half the time she coaches him. The reversal gave her purpose and actualization that one-directional advice never produced." }
+              ]
+            },
+            {
+              "id": "ss-svc-d2-p3",
+              "expandsToId": "ss-svc-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "This is why Step 12 of AA requires bringing another alcoholic into the program. Teaching is the deepest form of learning." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "ss-svc-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Simon's advice for people who can't identify their purpose: start with service. Purpose isn't found by looking inward — it's found by showing up for someone else." }
+              ]
+            },
+            {
+              "id": "ss-svc-d3-p2",
+              "tokens": [
+                { "type": "text", "text": "His illustration: a friend in a rut. Weekly coaching sessions, no lasting progress. He changed the format: half the time he coaches her, the other half she coaches him. The reversal gave her purpose and actualization — something the one-directional advice never produced." }
+              ]
+            },
+            {
+              "id": "ss-svc-d3-p3",
+              "tokens": [
+                { "type": "text", "text": "This is why " },
+                { "type": "term", "text": "Step 12 of AA", "elaboration": "Step 12 of Alcoholics Anonymous asks recovering members to carry the AA message to other alcoholics still suffering. The act of helping someone through what you've experienced reinforces your own recovery — teaching becomes the most durable form of learning and meaning-making." },
+                { "type": "text", "text": " is to bring another alcoholic into the program. Teaching is the deepest form of learning — it forces understanding and builds meaning simultaneously." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ss-ref",
+      "title": "Personal Reflection",
+      "layers": [
+        {
+          "depth": 1,
+          "paragraphs": [
+            {
+              "id": "ss-ref-d1-p1",
+              "expandsToId": "ss-ref-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "Teaching Piyush shows my own shortcomings more clearly" }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 2,
+          "paragraphs": [
+            {
+              "id": "ss-ref-d2-p1",
+              "expandsToId": "ss-ref-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "I'm experiencing this with Piyush. Teaching him surfaces my own gaps, deepens my understanding of him, and improves my advice." }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "paragraphs": [
+            {
+              "id": "ss-ref-d3-p1",
+              "tokens": [
+                { "type": "text", "text": "I'm experiencing this with Piyush — teaching him is showing me my own shortcomings more clearly, deepening my understanding of him, and helping me give better advice because I can connect his struggles to my own." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
